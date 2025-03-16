@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Сохрана
 
-## Getting Started
+**Сохрана** — это современное веб-приложение для управления файлами, созданное с использованием **Next.js**, **Appwrite**, **Tailwind CSS** и других современных технологий. Приложение позволяет пользователям безопасно загружать, хранить и управлять своими файлами.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Функционал
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Управление файлами**: Загрузка, просмотр и удаление файлов.
+- **Аутентификация**: Регистрация и вход с использованием OTP (одноразового пароля).
+- **Хранилище**: Отображение доступного и использованного пространства.
+- **Категории файлов**: Автоматическая сортировка файлов по типам (документы, изображения, медиа и т.д.).
+- **История загрузок**: Просмотр недавно загруженных файлов.
+- **Мобильная адаптация**: Полностью адаптирован для мобильных устройств.
+- **Интерактивные графики**: Визуализация использования хранилища с помощью графиков.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Основные компоненты
 
-## Learn More
+### 1. **Аутентификация**
+- Реализована через одноразовые пароли (OTP).
+- Используется Appwrite для управления пользователями.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. **Графики**
+- Графики построены с использованием библиотеки Recharts.
+- Отображают использование хранилища.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. **Управление файлами**
+- Загрузка, удаление и просмотр файлов.
+- Файлы сортируются по категориям: документы, изображения, медиа и т.д.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. **Мобильная адаптация**
+- Полностью адаптирован для мобильных устройств с использованием Tailwind CSS.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Зависимости
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Основные:
+- `next`
+- `react`
+- `tailwindcss + shadcn/ui`
+- `node-appwrite`
+
+### Дополнительные:
+- `recharts`: Для построения графиков.
+- `react-hook-form`: Для работы с формами.
+- `zod`: Для валидации данных.
+

@@ -1,7 +1,7 @@
 import { Models } from 'node-appwrite';
 import Image from 'next/image';
 
-import { formatDateTime } from '@/lib/utils';
+import { convertFileSize, formatDateTime } from '@/lib/utils';
 import Thumbnail from '@/components/Thumbnail';
 import FormattedDateTime from '@/components/FormattedDateTime';
 import { Input } from '@/components/ui/input';
@@ -32,7 +32,7 @@ export const FileDetails = ({ file }: { file: Models.Document }) => {
       <ImageThumbnail file={file} />
       <div className="space-y-4 px-2 pt-2">
         <DetailRow label="Формат:" value={file.extension} />
-        <DetailRow label="Размер:" value={file.size} />
+        <DetailRow label="Размер:" value={convertFileSize(file.size)} />
         <DetailRow label="Владелец:" value={file.owner.fullName} />
         <DetailRow label="Последнее изменение:" value={formatDateTime(file.$updatedAt)} />
       </div>

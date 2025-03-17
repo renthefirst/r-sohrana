@@ -39,7 +39,7 @@ const MobileNavigation = ({
       <Image
         src="/assets/icons/logo.svg"
         alt="logo"
-        width={120}
+        width={52}
         height={52}
         className="h-auto"
       />

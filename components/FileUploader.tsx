@@ -29,11 +29,10 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
             prevFiles.filter((f) => f.name !== file.name)
           );
           return toast(
-            <p className="body-2 text-white">
+            <p className="error-toast body-2 text-white p-3">
               <span className="font-semibold">{file.name}</span> is too large.
               Max file size is 50MB
-            </p>,
-            { className: 'error-toast' }
+            </p>
           );
         }
 
@@ -78,7 +77,7 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
       </Button>
       {files.length > 0 && (
         <ul className="uploader-preview-list">
-          <h4 className="h4 text-light-100">Uploading</h4>
+          <h4 className="h4 text-light-100 font-semibold">Загрузка...</h4>
 
           {files.map((file, i) => {
             const { type, extension } = getFileType(file.name);

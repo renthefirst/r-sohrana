@@ -10,6 +10,8 @@ import { Separator } from '@/components/ui/separator';
 import { getFiles, getTotalSpaceUsed } from '@/lib/actions/files.actions';
 import { convertFileSize, getUsageSummary } from '@/lib/utils';
 
+export const dynamic = 'force-dynamic';
+
 const Dashboard = async () => {
   const [files, totalSpace] = await Promise.all([
     getFiles({ types: [], limit: 10 }),

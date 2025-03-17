@@ -4,7 +4,12 @@ import { createAdminClient, createSessionClient } from '../appwrite';
 import { InputFile } from 'node-appwrite/file';
 import { appwriteConfig } from '../appwrite/config';
 import { ID, Models, Query } from 'node-appwrite';
-import { constructFileUrl, getFileType, parseStringify } from '../utils';
+import {
+  constructFileUrl,
+  convertFileSize,
+  getFileType,
+  parseStringify,
+} from '../utils';
 import { revalidatePath } from 'next/cache';
 import { getCurrentUser } from './user.actions';
 
@@ -112,8 +117,32 @@ export const getFiles = async ({
       queries
     );
 
-    console.log({ files });
-    return parseStringify(files);
+    // const totalSpace = {
+    //   image: { size: 0, latestDate: '' },
+    //   document: { size: 0, latestDate: '' },
+    //   video: { size: 0, latestDate: '' },
+    //   audio: { size: 0, latestDate: '' },
+    //   other: { size: 0, latestDate: '' },
+    //   used: 0,
+    //   all: 2 * 1024 * 1024 * 1024 ,
+    // };
+
+    // files.documents.forEach((file) => {
+
+    //   const fileType = file.type as FileType;
+    //   totalSpace[fileType].size += file.size;
+
+    //   totalSpace.used += file.size;
+
+    //   if (
+    //     !totalSpace[fileType].latestDate ||
+    //     new Date(file.$updatedAt) > new Date(totalSpace[fileType].latestDate)
+    //   ) {
+    //     totalSpace[fileType].latestDate = file.$updatedAt;
+    //   }
+    // });
+
+    return parseStringify({ ...files });
   } catch (error) {
     handleError(error, 'Failed to get files');
   }
@@ -135,6 +164,7 @@ export const renameFile = async ({
       fileId,
       { name: newName }
     );
+
     revalidatePath(path);
 
     return parseStringify(updatedFile);
@@ -211,12 +241,13 @@ export async function getTotalSpaceUsed() {
       audio: { size: 0, latestDate: '' },
       other: { size: 0, latestDate: '' },
       used: 0,
-      all: 2 * 1024 * 1024 * 1024 ,
+      all: 2 * 1024 * 1024 * 1024,
     };
 
     files.documents.forEach((file) => {
       const fileType = file.type as FileType;
       totalSpace[fileType].size += file.size;
+
       totalSpace.used += file.size;
 
       if (

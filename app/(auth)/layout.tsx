@@ -14,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               height={82}
               className="h-auto"
             />
-            <h1 className="h1 text-brand">Sohrana</h1>
+            <h1 className="h1 text-brand">Сохрана</h1>
           </div>
 
           <div className="space-y-2 text-white text-center">
@@ -42,7 +42,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             height={82}
             className="h-auto w-[200px] lg:w-[250px]"
           />
-          <h1 className="h1 text-brand text-center pt-2">Sohrana</h1>
+          <h1 className="h1 text-brand text-center pt-2">Сохрана</h1>
         </div>
 
         {children}

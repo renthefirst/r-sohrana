@@ -21,30 +21,33 @@
 ### 1. **Аутентификация**
 - Реализована через одноразовые пароли (OTP).
 
+![sohrana-authorization](https://github.com/user-attachments/assets/a48fa841-b737-456c-9d1d-98977f642fd1)
+
 
 ### 2. **Графики**
 - Графики построены с использованием библиотеки Recharts.
 - Отображают использование хранилища.
 
+![sohrana-upload](https://github.com/user-attachments/assets/210a4303-92c8-42c7-b2c7-594337749b3e)
+
+
 ### 3. **Управление файлами**
 - Загрузка, удаление и просмотр файлов.
+
+![sohrana-crud](https://github.com/user-attachments/assets/80d05d99-e8f9-4978-95dc-5a0732cc1035)
+
 - Файлы сортируются по категориям: документы, изображения, медиа и т.д.
+
+![sohrana-sort-and-search](https://github.com/user-attachments/assets/7fb6aa6f-d550-46e1-83fd-b74c01c454d1)
+
 
 ### 4. **Мобильная адаптация**
 - Полностью адаптирован для мобильных устройств с использованием Tailwind CSS.
 
+![sohrana-adaptive](https://github.com/user-attachments/assets/45ed994a-5538-4e7d-ba41-58b1a6033932)
+
 ---
 
-## Зависимости
-
-### Основные:
-- `next`
-- `react`
-- `tailwindcss + shadcn/ui`
-- `node-appwrite`
-
-### Дополнительные:
-- `recharts`: Для построения графиков.
-- `react-hook-form`: Для работы с формами.
-- `zod`: Для валидации данных.
+### Стек:
+- `next`, `react`, `tailwindcss + shadcn/ui`, `node-appwrite`, `recharts`, `react-hook-form`
 
